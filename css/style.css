@@ -14,7 +14,7 @@ h1 {
 
 .etch {
     position: relative;
-    top: 100px;
+    top: 110px;
     left: 350px;
     background-color: red;
     border-radius: 25px;
@@ -71,11 +71,17 @@ a:hover {
 .settings {
     position: relative;
     top: 100px;
-    left: 450px;
+    left: 425px;
 }
 
 div#author {
     position: relative;
     left: 50px;
     font-size: 20px;
+}
+
+input#pen {
+    width: 20px;
+    background-color: #ebebeb;
+    border: solid #949494 1px;
 }
