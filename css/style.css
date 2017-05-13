@@ -1,0 +1,75 @@
+* {
+    font-family: 'Cabin Sketch', cursive;
+}
+
+header {
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    left: 500px;
+}
+
+
+.etch {
+    position: relative;
+    top: 100px;
+    left: 350px;
+    background-color: red;
+    border-radius: 25px;
+    height: 450px;
+    width: 600px;
+    border: solid black 1px;
+}
+
+.pad {
+    background-color: white;
+    width: 500px;
+    height: 325px;
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
+
+.pad {
+    cursor: url('images/small-quill.png'), auto;
+}
+
+.left_button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    border: solid black 1px;
+}
+
+.right_button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    border: solid black 1px;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.settings {
+    position: relative;
+    top: 100px;
+    left: 450px;
+}
