@@ -8,17 +8,17 @@ var $square = $("<div />", {
     css: { "width": wide, "height": tall}
 });
 var grid = function ($size) {
-    for( var i = 0; i<= 500; i+$size){
-        $square.append($square.clone());
+    for( var i = 0; i<= 500; i+=$size){
+        for (var j = 0; j <= 400; j+=$size) {
+        $(".pad").append($square);
+        }
     }
-    //clone the temp row object with the columns to the wrapper
-    for (var i = 0; i <= 500; i+$size) {
-        $(".pad").append($square.clone());
-    }
-    }
+     $(".pad").append($('br'));
+}
 
 $('#size').on('change', function(){
     $('#pen').val($('#size').val());
+    grid($size);
 });
 
 $('#pen').on('keyup', function(){
