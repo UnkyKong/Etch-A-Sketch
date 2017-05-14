@@ -90,8 +90,8 @@ input#pen {
 }
 
 .square {
-    display: inline-block
-    height: auto;
-    width: auto;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
     border: solid black 1px;
 }

@@ -1,19 +1,19 @@
 $(document).ready(function(){
 
 var $size = $('#size').val();
-var wide = (500 / $size)+'px'
-var tall = (400 / $size)+'px'
+var wide = (500 / $size)+'px';
+var tall = (400 / $size)+'px';
 var $square = $("<div />", {
-    class: 'row',
+    class: 'square',
     css: { "width": wide, "height": tall}
 });
 var grid = function ($size) {
-    for( var i = 0; i<= 500; i+=$size){
-        for (var j = 0; j <= 400; j+=$size) {
-        $(".pad").append($square);
+    for( var i = 0; i<= $size; i++){
+        for (var j = 0; j <= $size; j++) {
+        $(".pad").append(($square).clone());
         }
     }
-     $(".pad").append($('br'));
+     $(".pad").append($('</br>'));
 }
 
 $('#size').on('change', function(){
