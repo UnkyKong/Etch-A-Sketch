@@ -1,23 +1,24 @@
 $(document).ready(function(){
 
-var $size = $('#size').val();
-var wide = (500 / $size)+'px';
-var tall = (400 / $size)+'px';
-var $square = $("<div />", {
+var $size = $('#size').val();   
+
+var grid = function ($size) {
+    $('.square').remove();
+    var $size = $('#size').val();    
+    var wide = (500 / $size)+'px';
+    var tall = (400 / $size)+'px';
+    var $square = $("<div />", {
     class: 'square',
     css: { "width": wide, "height": tall}
-});
-var grid = function ($size) {
-    for( var i = 0; i<= $size; i++){
-        for (var j = 0; j <= $size; j++) {
+    });
+    for( var i = 0; i< $size*$size; i++){
         $(".pad").append(($square).clone());
-        }
     }
-     $(".pad").append($('</br>'));
-}
+    }
 
 $('#size').on('change', function(){
     $('#pen').val($('#size').val());
+    $size = $('#size').val();    
     grid($size);
 });
 
@@ -31,7 +32,11 @@ $('#pen').on('keyup', function(){
     }
 });
 
+grid($size);
 
+$('.square').on('mouseenter',function(){
+    $(this).css('background-color', $('#color').val());
+});
 
 
 

@@ -91,7 +91,6 @@ input#pen {
 
 .square {
     box-sizing: border-box;
-    display: inline-block;
+    float: left;
     margin: 0;
-    border: solid black 1px;
 }
