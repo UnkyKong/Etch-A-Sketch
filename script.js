@@ -39,7 +39,7 @@ $('.pad').on('mouseenter','.square',function(){
 
 
 
-$('button#reset').on('.click' ,function(){
+$('button#reset').click(function(){
     $('.square').css('background-color','white');
 });
 grid($size);
