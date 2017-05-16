@@ -3,8 +3,7 @@ $(document).ready(function(){
 var $size = $('#size').val();   
 
 var grid = function ($size) {
-    $('.square').remove();
-    var $size = $('#size').val();    
+    $('.square').remove();    
     var wide = (500 / $size)+'px';
     var tall = (400 / $size)+'px';
     var $square = $("<div />", {
@@ -28,19 +27,22 @@ $('#pen').on('keyup', function(){
         $('#pen').val(64);
         $('#size').val($('#pen').val())
     }
-    else {$('#size').val($('#pen').val())
-    }
+    else {$('#size').val($('#pen').val())          
+}
+ grid($('#pen').val());  
 });
 
-grid($size);
 
-$('.square').on('mouseenter',function(){
+$('.pad').on('mouseenter','.square',function(){
     $(this).css('background-color', $('#color').val());
 });
 
 
 
-
+$('button#reset').on('.click' ,function(){
+    $('.square').css('background-color','white');
+});
+grid($size);
 
 
 });
