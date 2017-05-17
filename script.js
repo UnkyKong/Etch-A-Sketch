@@ -1,6 +1,11 @@
 $(document).ready(function(){
 
+var $brush = $('.pad').on('mouseenter','.square',function(){
+        $(this).css('background-color', $('#color').val());
+});
+
 var $size = $('#size').val();   
+var shade = 255;
 
 var grid = function ($size) {
     $('.square').remove();    
@@ -32,9 +37,12 @@ $('#pen').on('keyup', function(){
  grid($('#pen').val());  
 });
 
+$brush
 
-$('.pad').on('mouseenter','.square',function(){
-    $(this).css('background-color', $('#color').val());
+
+
+$('input#color').click(function(){
+    $brush
 });
 
 
@@ -42,7 +50,38 @@ $('.pad').on('mouseenter','.square',function(){
 $('button#reset').click(function(){
     $('.square').css('background-color','white');
 });
+
+$('button.random_color').click(function(){
+   $('.pad').on('mouseenter','.square',function(){
+    var r = Math.floor(Math.random()*255);
+    var g = Math.floor(Math.random()*255);
+    var b = Math.floor(Math.random()*255);
+    var color = 'rgb('+r+', '+g+', '+b+')';
+    $(this).css('background-color', color);
+
+});
+});
+
+$('button.greyscale').click(function(){
+    var shade = 255;
+   $('.pad').on('mouseenter','.square',function(){
+    
+    if (shade = 0){
+            shade = 255;
+        }
+        else {
+            shade -= 5;
+        }
+    var grey = 'rgb('+shade+', '+shade+', '+shade+')';
+    console.log(grey)
+    $(this).css('background-color', grey);
+    
+});
+});
+
+
 grid($size);
+
 
 
 });
