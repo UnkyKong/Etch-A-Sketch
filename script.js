@@ -64,22 +64,17 @@ $('button.random_color').click(function(){
 });
 });
 
-console.log (shade)
 $('button.greyscale').click(function(){
     var shade = 255;
    $('.pad').on('mouseenter','.square',function(){
-    console.log (shade)
-    if (shade = 0){
+    if (shade <= 0){
             shade = 255;
         }
         else {
             shade = shade -5
         }
-        console.log (shade)
     var grey = 'rgb('+shade+', '+shade+', '+shade+')';
-    console.log(grey)
     $(this).css('background-color', grey);
-    console.log (shade)
 });
 });
 
